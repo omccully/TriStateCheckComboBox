@@ -81,9 +81,9 @@ namespace WpfApp3
 
             SelectorItem selectorItem = (SelectorItem)d;
 
-            selectorItem.PreviewMouseDown += (s, me) =>
+            selectorItem.PreviewMouseUp += (s, me) =>
             {
-                System.Diagnostics.Debug.WriteLine("PreviewMouseDown");
+                System.Diagnostics.Debug.WriteLine("PreviewMouseUp");
                 if (selectorItem.IsSelected == null)
                 {
                     //CheckComboBox check = FindParent<CheckComboBox>(selectorItem);
