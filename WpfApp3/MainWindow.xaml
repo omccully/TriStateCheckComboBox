@@ -32,6 +32,21 @@
         </Style>
       </xctk:CheckComboBox.ItemContainerStyle>
     </xctk:CheckComboBox>
-
+    <xctk:CheckListBox
+            ItemsSource="{Binding AllItems}"
+            SelectedItemsOverride="{Binding SelectedItems}">
+      <xctk:CheckListBox.ItemContainerStyle>
+        <Style TargetType="xctk:SelectorItem">
+          <Setter Property="local:TriStateCheckComboBox.SelectedValues" 
+                  Value="{Binding DataContext.SelectedItems, 
+                    RelativeSource={RelativeSource AncestorType={x:Type xctk:CheckListBox}}}"/>
+          <Setter Property="local:TriStateCheckComboBox.TriStateValues" 
+                  Value="{Binding DataContext.TriStateItems, 
+                    RelativeSource={RelativeSource AncestorType={x:Type xctk:CheckListBox}}}"/>
+          <Setter Property="local:TriStateCheckComboBox.SelectorItemSelected" Value="{Binding IsSelected, 
+              RelativeSource={RelativeSource Self}}"/>
+        </Style>
+      </xctk:CheckListBox.ItemContainerStyle>
+    </xctk:CheckListBox>
   </StackPanel>
 </Window>
